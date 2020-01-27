@@ -1,18 +1,28 @@
+
+-- #1
 SELECT * FROM Customer;
 
+-- #2
 SELECT First_Name FROM Customers;
 
+-- #3
 SELECT First_Name FROM Customers WHERE Customer_ID=105;
 
+-- #4
 UPDATE Customers SET First_Name='Nothile Ngcobo' WHERE Customer_ID=105;
 
+-- #5
 DELETE FROM Customers WHERE Customer_ID=105;
 
+-- #6
 SELECT COUNT(Status) FROM Orders;
 
+-- #7
 SELECT MAX(Amount) FROM Payments;
 
+-- #8
 select * FROM Customers ORDER BY Country ASC;
+
 -- #9 
 select * from products where price between '100' and '600';
 
