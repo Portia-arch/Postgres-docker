@@ -1,61 +1,61 @@
+SELECT *
+FROM Customers;
 
--- #1
-SELECT * FROM Customer;
+SELECT First_Name
+FROM Customers;
 
--- #2
-SELECT First_Name FROM Customers;
+SELECT First_Name
+FROM Customers
+WHERE Customer_ID=1;
 
--- #3
-SELECT First_Name FROM Customers WHERE Customer_ID=105;
+UPDATE Customers SET First_Name='Nothile' WHERE Customer_ID=1;
 
--- #4
-UPDATE Customers SET First_Name='Nothile Ngcobo' WHERE Customer_ID=105;
+DELETE FROM Customers WHERE Customer_ID=2;
 
--- #5
-DELETE FROM Customers WHERE Customer_ID=105;
+SELECT COUNT(Status)
+FROM Orders;
 
--- #6
-SELECT COUNT(Status) FROM Orders;
+SELECT MAX(Amount)
+FROM Payments;
 
--- #7
-SELECT MAX(Amount) FROM Payments;
+select *
+FROM Customers
+ORDER BY Country ASC;
 
--- #8
-select * FROM Customers ORDER BY Country ASC;
+select *
+from products
+where price between '100' and '600';
 
--- #9 
-select * from products where price between '100' and '600';
+select *
+from customers
+WHERE city='BERLIN'
+    AND country='GERMANY';
 
--- #10
-select * from customers
-WHERE city='Berlin'
-AND country='Germany';
+select *
+from customers
+WHERE city='CAPE TOWN'
+    or city='DURBAN';
 
--- #11
-select * from customers
-WHERE city='Cape Town'
-or city='durban';
-
--- #12
-select * from products
+select *
+from products
 WHERE price > '500';
 
--- #13
-select SUM(amount) FROM payments;
+select SUM(amount)
+FROM payments;
 
--- #14
-select count(*) from orders
+select count(*)
+from orders
 where status='Shipped';
 
--- #15
-select AVG(price) from products
 
--- #16 
-SELECT customers.customer_ID, payments.payment_ID
-FROM customers
-INNER JOIN payments
-ON customers.customer_ID = payments.customer_ID
+select AVG(price)
+from products;
 
---  #17 
-SELECT * FROM products 
+SELECT Customers.Customer_ID, Payments.Payment_ID
+FROM Customers
+    INNER JOIN Payments
+    ON Customers.Customer_ID = Payments.Customer_ID;
+
+SELECT *
+FROM Products
 WHERE description LIKE 'Turnable front wheels%';
